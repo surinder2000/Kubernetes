@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+    name: myrs1
+
+spec:
+    replicas: 3
+    selector:
+        env: production
+    template:
+        metadata:
+            name: mywebpod
+            labels:
+                env: production
+        spec:
+            containers:
+              - name: myrscon
+                image: vimal13/apache-webserver-php
+
+
