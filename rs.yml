@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
     name: myrs1
@@ -6,12 +6,16 @@ metadata:
 spec:
     replicas: 3
     selector:
-        env: production
+        matchExpressions:
+          - { key: env, operator: In, values: [production ] }
+          - { key: region, operator: In, values: [IN ] }
     template:
         metadata:
             name: mywebpod
             labels:
                 env: production
+                region: IN 
+                dc: "2"
         spec:
             containers:
               - name: myrscon
