@@ -7,11 +7,13 @@ spec:
     replicas: 3
     selector:
         env: production
+        region: IN
     template:
         metadata:
             name: myweb-pod
             labels:
                 env: production
+                region: IN
         spec:
             containers:
               - name: mywebcon1
