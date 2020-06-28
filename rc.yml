@@ -15,7 +15,7 @@ spec:
         spec:
             containers:
               - name: mywebcon1
-                image vimal13/apache-webserver-php
+                image: vimal13/apache-webserver-php
 
 
 
