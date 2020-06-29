@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mywebdeploy
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            env: production
+            region: IN
+    template:
+        metadata:
+            name: mywebpod
+            labels:
+                env: production 
+                region: IN 
+        spec:
+            containers:
+             -  name: mywebcon
+                image: vimal13/apache-webserver-php
+
+
+
